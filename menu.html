@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu</title>
+    </head>
+
+    <body>
+        <div>
+            <div id="center">
+                <table id="menu-table">
+                    <thead>
+                        <tr>
+                            <th colspan="5">
+                                NHOU ST. CROIX VALLEY<br>
+                                2026 RUST PREVENTION MENU - Cars, Trucks, & SUVs
+                            </th>
+                        </tr>  
+
+                        <tr>
+                            <th>Service</th>
+                            <th>Description</th>
+                            <th>Rust Level</th>
+                            <th>Frequency</th>
+                            <th>price</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <td>Clear NH Oil</td>
+                            <td>Clear NH Oil applied to undercarriage externals and fogged into all cavities.</td>
+                            <td>Any</td>
+                            <td>Yearly Application</td>
+                            <td id="clear-nh-oil-price"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Black NH Oil</td>
+                            <td>Black NH Oil Applied to undercarriage externals that were black from factory. Clear NH Oil on other externals and fogged into all cavities.</td>
+                            <td>Any</td>
+                            <td>Yearly Application</td>
+                            <td id="black-nh-oil-price"></td>
+                        </tr>
+                        <tr>
+                            <td>Black V3</td>
+                            <td>Newest formula combines NH Oil, wax, & lanolin. Lower drip and higher durability than NH Oil. Applied to externals. Clear NH Oil fogged into all cavities.</td>
+                            <td>Low to Moderate</td>
+                            <td>Yearly Application</td>
+                            <td id="black-v3-price"></td>
+                        </tr>     
+                        
+                        <tr>
+                            <td>HD Wheelwell Guard</td>
+                            <td>10x thicker than NH Oil. Applied to wheel wells of vehichles that don't have plastic/carpet inner fenders</td>
+                            <td>Any</td>
+                            <td>Varies based on mileage</td>
+                            <td id="wheelwell-price"></td>
+                        </tr>   
+                        
+                        <tr>
+                            <td>Boss Wax Hybrid</td>
+                            <td>Premium, semi-permenant formulation of NH Oil & Wax. Cures to soft, pliable matte black coating. Product covered under warranty. Includes NHOU's Brine Eliminator Wash as needed and Clear NH Oil misted into cavities.</td>
+                            <td>Light to no rust only</td>
+                            <td>Re-oil cavities every 2 years at a discounted price. Free external touch-ups</td>
+                            <td id="boss-wax-hybrid-price"></td>
+                        </tr>   
+                        
+                        <tr>
+                            <td>Brine Eliminator Wash</td>
+                            <td>Foaming soak followed by pressure washed undercarriage externals and rinse. Designed to remove superficial dirt and dissolve salt/brine contaminents.</td>
+                            <td>Any</td>
+                            <td>Prior to first undercoating only</td>
+                            <td id="brine-wash-price"></td>
+                        </tr>  
+
+                        <tr>
+                            <td>Full Chasis Flush</td>
+                            <td>Includes everything in the Brine Eliminator Wash plus all cavities and internals. Designed to remove accumulated dirt and debris from frame rails and body cavities. Price includes up to 2 hours of labor.</td>
+                            <td>Any</td>
+                            <td>As needed</td>
+                            <td id="full-chasis-price"></td>
+                        </tr>   
+                        
+                        <tr>
+                            <td>Needle Scaling</td>
+                            <td>Necessary before undercoating on vehicles w/loose rust or peeling prior undercoatings.</td>
+                            <td>Moderate to Severe</td>
+                            <td>Prior to first undercoating only</td>
+                            <td id="needle-scaling-price"></td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="5">Package Deals</th>
+                        </tr>
+
+                        <tr>
+                            <td>Rustoration</td>
+                            <td>Brine Eliminator Wash to external undercarriage, rust neutralizer, up to 2 hrs of needle scaling, HD Wheelwell guard, & Black NH Oil. Can add Full Chassis Flush for $200.</td>
+                            <td>Significant but structurally solid</td>
+                            <td>NH Oil reapplication yearly</td>
+                            <td id="rustoration-price"></td>
+                        </tr>
+                        <tr>
+                            <td>HD Oil Package</td>
+                            <td>Black V3. HD Wheelwell Guard on all high-wear areas such as frame rails, axles, suspenson components, wheel wells, etc.</td>
+                            <td>ANY</td>
+                            <td>Every 2 Years</td>
+                            <td id="hd-oil-package-price"></td>
+                        </tr>                    
+
+                    </tbody>                
+                </table>
+            </div>
+        </div>
+
+        <style>
+            #center{
+                display: grid;
+                place-items: center;
+            }
+
+            #menu-table{
+                width: 75%;
+                border-radius: 20px;
+                background-color: rgb(39, 39, 39);
+                color:rgb(125, 19, 19);
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-align: center;
+            }
+
+            #menu-table td{
+                padding:30px;
+            }
+
+            #menu-table tbody:nth-child(6){
+                padding-bottom: 2500px;
+                color:blue
+            }
+
+            #menu-table th{
+                color:white;
+            }
+
+            #menu-table thead{
+                padding-top: 15px;
+            }
+        </style>
+
+        <script src="script.js"></script>
+    </body>
+</html>

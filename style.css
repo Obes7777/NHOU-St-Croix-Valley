@@ -179,7 +179,7 @@ WIDGETS
 
 /*Comparisons*/
 .comparison-table {
-    width: 100%;
+    width: 90%;
     max-width: 900px;
     margin: 0 auto;
     border-collapse: collapse;
@@ -245,13 +245,6 @@ WIDGETS
 
 /*Contact*/
 
-
-/*HybridDesc*/
-
-
-/*MouseOutDesc*/
-
-
 /*Menu*/
 #menu{
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.3);
@@ -284,8 +277,13 @@ WIDGETS
 
 /*Hybrid*/
 #warranty{
-    padding-left: 150px;
-    padding-right: 150px;
+    width: 50%;
+}
+
+#warranty-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #hybrid{
