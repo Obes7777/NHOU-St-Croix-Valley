@@ -128,23 +128,32 @@
                 color:rgb(125, 19, 19);
                 font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                 text-align: center;
+                border: solid black 6px;
+            }
+            
+            #menu-table tr{
+
             }
 
             #menu-table td{
                 padding:30px;
+                border-bottom: 2px solid #49483e;
+                border-right: 2px solid #49483e;
             }
 
-            #menu-table tbody:nth-child(6){
-                padding-bottom: 2500px;
-                color:blue
+            #menu-table td:last-child{
+                border-right: none;
             }
+
+            #menu-table tr:nth-child(8) td{
+                border-bottom: none;
+            }
+
 
             #menu-table th{
                 color:white;
-            }
-
-            #menu-table thead{
-                padding-top: 15px;
+                padding-top: 25px;
+                padding-bottom: 15px;
             }
         </style>
 

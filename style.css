@@ -280,12 +280,7 @@ WIDGETS
     width: 50%;
 }
 
-#warranty-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+ 
 #hybrid{
     position: relative;
     top: -85px;
