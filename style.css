@@ -58,9 +58,23 @@ SIDE BAR
 
 /*Bar*/
 .nav-link{
-    padding: 15px;
+    padding: 5px;
+    padding-left: 12px;
     font-size: 25px;
     color: white;
+}
+
+.contact-link{
+    padding: 0px;
+    font-size: 45%;
+    color: rgb(210, 209, 209); 
+}
+
+.contact-link:hover{
+    padding: 0px;
+    font-size: 15px;
+    color: rgb(255, 255, 255); 
+    text-decoration: underline;
 }
 
 #nav-bar-logo{
