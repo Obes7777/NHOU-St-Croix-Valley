@@ -11,16 +11,23 @@ body{
 
 /*Nav Bar Thing*/
 #nav-bar{
+    z-index: 100000;
     display: flex;
 
-    position:sticky;
-    width: 100vw;
+    position:fixed;
+    width: 100%;
     height: 18vh;
-    background-color: rgb(46, 46, 46);
-    padding: 5px;
+    background-color: rgb(35, 34, 34);
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+#ghost-nav-bar{
+    width: 100vw;
+    height: 38vh;
 }
 
 .nav-container{
+
 
 }
 
@@ -42,7 +49,7 @@ body{
 }
 
 #nav-bar-logo-container:hover{
-    left:0;
+    left:-0.1%;
 }
 
 #nav-bar-logo{
@@ -51,9 +58,208 @@ body{
     transform: translateY(12%);
 }
 
+@keyframes titleLoad {
+    100% {
+        width: 30%;
+    }
+}
+
 #nav-link-container{
     flex:7;
 }
 
 
 
+
+
+.module{
+    width: 100%;
+    padding:0;
+    margin:0;
+    margin-bottom:5%;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+
+}
+
+#logo img{
+    width:15%;
+    height: auto;
+    animation: titleLoad 1.5s ease-out forwards;
+}
+
+#intro-text{
+    text-align:center;
+    padding:5%;
+}
+
+#title-para{
+    font-family: verdana;
+}
+
+
+
+.social-tag{
+    margin:0;
+    padding-left:1%;
+    font-family:verdana;
+    background-color:black;
+    color:white;
+    border-radius:5px;
+}
+
+#socials{
+    display:flex;
+    gap: 0.5%;
+    border:black solid 2px;
+    background: black
+    flex-wrap: wrap;
+
+}
+
+#map-container{
+    flex: 1 1 0%; 
+    min-width: 300px;
+    flex-wrap: wrap;
+    max-height: 90vh;
+    overflow:hidden;
+
+}
+
+#feed-container{
+    flex: 0 0 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow:hidden;
+    flex-wrap: wrap;
+}
+
+#map{
+    width: 100%;
+    height: 100%; 
+}
+
+#feed{
+    
+}
+
+
+
+
+#before-after-box{
+    border-radius: 15px;
+    width:100%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    display:flex;
+    justify-content:center;
+}
+
+.before-after-img{
+    width: 50%;
+    border-radius: 15px;
+    border: solid black 2px;
+}
+
+.before-after-label{
+    position: relative;
+    left: 20%;
+    font-family: verdana;
+}
+
+#before-after-text{
+    font-family: verdana;
+    width: 75%;
+}
+
+#before{
+    position: relative;
+    left: 10%;
+}
+
+#after{
+    position: relative;
+    left: 45%;
+    top: -15vh;
+}
+
+
+
+
+
+
+#contact{
+    margin-top:15%
+}
+
+#contact-link-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+#contact-link-row-1 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 15%; /* Adjust this to control the gap between phone and email */
+}
+
+#phone-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Pushes the phone number right toward the center gap */
+}
+
+#email-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* Pushes the email left toward the center gap */
+}
+
+#contact-link-row-2 {
+  display: flex;
+  justify-content: center; /* Facebook sits at the exact 50% midpoint */
+  align-items: center;
+  width: 100%;
+}
+
+/* Optional styling for the links to make them tap-friendly */
+.contact-link {
+    text-decoration: none;
+    font-family: system-ui, sans-serif;
+    font-size: 40%;
+    /* Add color based on your theme */
+    color:white;
+    font:900;
+    background: black;
+    border-radius:8px;
+    padding:1px;
+
+    transition: font-size 0.4s ease;
+
+
+}
+
+.contact-link:hover {
+  font-size: 30%;
+}
+
+#contact-prompt-container{
+    display:flex;
+    justify-content:center;
+}
+
+#contact-prompt{
+    font-family: system-ui, sans-serif;
+    font-size: 26px;
+    color:white;
+    font:900;
+    background: black;
+    border-radius:8px;
+    padding:4px;
+}

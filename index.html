@@ -13,9 +13,18 @@
         
         <!--Script Tags-->
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="script.js" defer></script>
     </head>
 
     <body style="margin: 0; padding: 0;">
+        <button id="side-bar-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-bar">
+            <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false">
+                <rect width="100" height="12" rx="6"></rect>
+                <rect y="34" width="100" height="12" rx="6"></rect>
+                <rect y="68" width="100" height="12" rx="6"></rect>
+            </svg>
+        </button>
+
         <div id="nav-bar" class="nav-bar">
             <img src="src/img/NHOU_LOGO_STCROIX.webp" id="nav-bar-logo">
             <div class="nav-link">Contact Us:</div>
@@ -55,7 +64,7 @@
                             </div>
 
                         </div>
-                        <b><h1 id="title-para">NHOU St. Croix Valley proudly serves the Wisconsin/Minnesota border from our dedicated shop location—or with our convenient mobile service from our specially fabricated undercoating trailer.</h1></b>
+                        <b><h1 id="title-para">NHOU St. Croix Valley serves the Wisconsin/Minnesota border from our shop or convenient mobile undercoating trailer.</h1></b>
                     </div>
 
                     <br>
@@ -86,12 +95,15 @@
                             <div>
                                 <b>
                                 <p>
-                                    Unlike paint-based undercoating which can crack, chip, and trap moisture against the frame, our proven oil-based undercoating self-heals while forcing out moisture, sealing off oxygen, and creeping deep into frame cavities. For vehicles with little to no rust, our hybrid formulation cures to a matte-black, drip-free, like-new finish within 48 hours and is backed by a lifetime warranty.
+                                    Unlike paint-based coatings, our oil-based formula self-heals, forces out moisture, and creeps deep into frame cavities. Our hybrid formula cures to a matte-black, drip-free finish within 48 hours and includes a lifetime warranty.
                                 </p>
                                 </b>
                             </div>
                         </div>
                     </div>
+                <br>
+                <br>
+                <br>
 
                     <div id="application-container">
                         <div class="application-img-background">
@@ -106,22 +118,19 @@
                         <div class="application-module">
                             <h2>TRUCKS</h2>
                             <p>
-                                Whether you own one truck or a fleet of snow removal equipment, NHOU St. Croix
-                                Valley can extend the life of your vehicles, while decreasing downtime and increasing
-                                reliability. NHOU oil undercoating has been proven on tens of thousands of trucks for
-                                over 15 years.
+                                Protect your truck or snow-removal equipment from rust, reduce downtime, and extend vehicle life with NHOU oil undercoating.
                             </p>
                         </div>
                         <div class="application-module">
                             <h2>CARS & SUVS</h2>
                             <p>
-                                Second to your home, your personal vehicles are the biggest investment you’re likely to make. Our eco-friendly, mineral-oil-based formula creeps into all the little places rust begins—like inside your frame and behind wheel wells. By sealing off oxygen and forcing out moisture, rust simply can’t happen.
+                                Our eco-friendly, mineral-oil-based formula reaches frames and wheel wells, forcing out moisture and sealing off the oxygen rust needs.
                             </p>
                         </div>
                         <div class="application-module">
                             <h2>MUNICIPAL & COMMERCIAL FLEETS</h2>
                             <p>
-                                NHOU undercoating protects your fleet vehicles and equipment from corrosion and decay—whether at-use or in storage. For the ultimate protection during long-term storage, we can apply our #1-rated Mouse-Out formula that keeps rodents away—protecting your fleet from infestation AND rust.
+                                Protect fleet vehicles and equipment from corrosion in use or storage. Our product contains peppermint, which rodents do not like.
                             </p>
                         </div>                                                 
                     </div>
@@ -152,18 +161,18 @@
                                 </tr>
                                 <tr>
                                     <td>Penetration:</td>
-                                    <td>Mists and creeps deeply into tight spaces. A dime-size drop creeps more than 7 inches</td>
+                                    <td>Mists and creeps deep into tight spaces, traveling more than 7 inches from a dime-size drop</td>
                                     <td>Does not creep or mist missing deep body cavities and frames</td>
                                 </tr>
                                 <tr>
                                     <td>Equipment:</td>
-                                    <td>Custom-manufactured tools from the leading supplier to reach every single part</td>
+                                    <td>Custom tools reach every part of the undercarriage</td>
                                     <td>Generic, off-the-shelf tools that miss hidden areas</td>
                                 </tr>
                                 <tr>
-                                    <td>Rodent Defense:</td>
-                                    <td>Exclusive Mouse-Out formula repels mice and rodents four ways with 92% effectivness</td>
-                                    <td>None; leaves soy-coated wires vulnerable to chewing</td>
+                                    <td>Peppermint:</td>
+                                    <td>Contains peppermint, which rodents do not like</td>
+                                    <td>Not included</td>
                                 </tr>                                                                                                                                       
                             </tbody>
                         </table>
@@ -175,35 +184,110 @@
                     <br>
 
                     <div id="menu-container">
-                        <div>
-                            <img id="menu" src="src/img/PriceMatrix_StCroix_011626-disclaimer.webp">
-                        </div>
+                        <table id="menu-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="5">
+                                        NHOU ST. CROIX VALLEY<br>
+                                        2026 RUST PREVENTION MENU - Cars, Trucks, & SUVs
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Description</th>
+                                    <th>Rust Level</th>
+                                    <th>Frequency</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Clear NH Oil</td>
+                                    <td>Clear NH Oil applied to undercarriage externals and fogged into all cavities.</td>
+                                    <td>Any</td>
+                                    <td>Yearly Application</td>
+                                    <td id="clear-nh-oil-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Black NH Oil</td>
+                                    <td>Black NH Oil applied to black factory undercarriage externals, with Clear NH Oil fogged into all cavities.</td>
+                                    <td>Any</td>
+                                    <td>Yearly Application</td>
+                                    <td id="black-nh-oil-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Black V3</td>
+                                    <td>NH Oil, wax, and lanolin formula with lower drip and higher durability, plus Clear NH Oil in all cavities.</td>
+                                    <td>Low to Moderate</td>
+                                    <td>Yearly Application</td>
+                                    <td id="black-v3-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>HD Wheelwell Guard</td>
+                                    <td>Extra-thick protection for wheel wells without plastic or carpet inner fenders.</td>
+                                    <td>Any</td>
+                                    <td>Varies by mileage</td>
+                                    <td id="wheelwell-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Boss Wax Hybrid</td>
+                                    <td>Premium semi-permanent NH Oil and wax coating with warranty coverage, brine wash as needed, and Clear NH Oil in cavities.</td>
+                                    <td>Light to no rust only</td>
+                                    <td>Re-oil cavities every 2 years</td>
+                                    <td id="boss-wax-hybrid-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Brine Eliminator Wash</td>
+                                    <td>Foaming soak, pressure wash, and rinse to remove dirt and dissolve salt and brine contaminants.</td>
+                                    <td>Any</td>
+                                    <td>Before first undercoating</td>
+                                    <td id="brine-wash-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Full Chassis Flush</td>
+                                    <td>Brine wash plus cavities and internals, including up to 2 hours of labor.</td>
+                                    <td>Any</td>
+                                    <td>As needed</td>
+                                    <td id="full-chasis-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Needle Scaling</td>
+                                    <td>Prepares vehicles with loose rust or peeling prior coatings for undercoating.</td>
+                                    <td>Moderate to Severe</td>
+                                    <td>Before first undercoating</td>
+                                    <td id="needle-scaling-price"></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="5">Package Deals</th>
+                                </tr>
+                                <tr>
+                                    <td>Rustoration</td>
+                                    <td>Brine wash, rust neutralizer, up to 2 hours of needle scaling, HD Wheelwell Guard, and Black NH Oil.</td>
+                                    <td>Significant but structurally solid</td>
+                                    <td>NH Oil yearly</td>
+                                    <td id="rustoration-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>HD Oil Package</td>
+                                    <td>Black V3 and HD Wheelwell Guard on high-wear areas such as frame rails, axles, suspension components, and wheel wells.</td>
+                                    <td>Any</td>
+                                    <td>Every 2 years</td>
+                                    <td id="hd-oil-package-price"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <br>
                     <br>
-                    <br>
-                    <br>
-                    <br>
 
-                    <div id="mouse-out-container">
-                        <div class="grid-container">
-                            <div class="grid-image">
-                                <img src="src/img/mouseout.webp" alt="Your descriptive alt text">
-                            </div>
-                            <div class="grid-content">
-                                <b><h1>NHOU MOUSE-OUT</h1></b>
-                                <p>
-                                    Today’s vehicles are manufactured with soy-based wiring and plastics that smell and taste sweet to rodents. That’s why every NHOU undercoating application includes NHOU MOUSE-OUT rodent repellent—laboratory formulated to repel rodents in four ways: scent, taste, touch and predatory fear from synthetic predator scent undetectable by humans.
-                                    <br>
-                                    <br>
-                                    MOUSE-OUT is infused directly into our clear formula that’s sprayed inside your vehicle’s frame, in all body cavities, and on all wiring under the hood. In third-party lab testing, the exclusive formula achieved an unprecedented 92% effectiveness at repelling mice.
-                                </p>
-                            </div>
-                        </div>
-                </div>
-
+                    
                 <br>
                 <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>v
                 <br>
                 <div id="hybrid-container">
                         <div class="grid-container">
@@ -213,13 +297,13 @@
                             <div class="grid-content">
                                 <b><h1>NHOU Hybrid</h1></b>
                                 <p>
-                                    NHOU HYBRID is our newest formula, achieving our highest-ever rating in our lab tests. Engineered for vehicles with little to no rust (typically vehicles up to three years old here in Northern Virginia), the oil-based rust protectant will creep and penetrate to the base metal to displace moisture and then cure within 48 hours to form a pliable, matte-black, drip-free layer—giving your undercarriage a like-new appearance while protecting it from road salt-brine and rust.
+                                    NHOU HYBRID is our highest-rated formula for vehicles with little to no rust. It penetrates to the base metal, displaces moisture, and cures within 48 hours into a pliable, matte-black layer that protects against road salt and rust.
                                     <br>
                                     <br>
-                                    After NHOU HYBRID is applied to external undercarriage parts, NHOU Clear Oil Undercoating is then misted into all frame cavities, body panels and inside the engine bay. Infused with NHOU MOUSE-OUT, it deters rodents by touch, smell, taste and predatory fear-with real peppermint essential oil and predatory scent undetectable by humans.
+                                    We then mist NHOU Clear Oil Undercoating into frame cavities, body panels, and the engine bay. The product contains peppermint, which rodents do not like.
                                     <br>
                                     <br>
-                                    NHOU HYBRID is backed by a lifetime, transferrable warranty.
+                                    NHOU HYBRID includes a lifetime, transferable warranty.
                                 </p>
                                 <br>
                                 <div id="warranty-container">

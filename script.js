@@ -1,12 +1,14 @@
 /*Price Handling*/
 
 //Prices
-prices = {
+
+//Pull this data from the file eventually
+const prices = {
     "clear-nh-oil-price": 67,
     "black-nh-oil-price": 67,
     "black-v3-price": 67,
     "wheelwell-price": 67,
-    "boss-wax-hybrid-price": [67, 69], // [car, truck]
+    "boss-wax-hybrid-price": [67, 67], // [car, truck]
     "brine-wash-price": 67,
     "full-chasis-price": 67,
     "needle-scaling-price": 67,
@@ -15,11 +17,11 @@ prices = {
 }
 
 
-//Script for implimenting the thing or something
-keys = Object.keys(prices)
+//Script for implimenting the prices or something
+const keys = Object.keys(prices)
 
 for(let i = 0; i < keys.length; i++){
-    val = ""
+    let val = ""
     switch(keys[i]){
         case "black-nh-oil-price":
             val = `$${prices[keys[i]]} + Tax (Truck/Suv)`
@@ -36,5 +38,20 @@ for(let i = 0; i < keys.length; i++){
         default:    
             val = `$${prices[keys[i]]} + Tax`
     }
-    document.getElementById(keys[i]).innerHTML = val
+    const priceElement = document.getElementById(keys[i])
+    if (priceElement) {
+        priceElement.innerHTML = val
+    }
+}
+
+
+// Side bar handling
+const sidebarButton = document.getElementById("side-bar-btn")
+
+if (sidebarButton) {
+    sidebarButton.addEventListener("click", () => {
+        const isOpen = document.body.classList.toggle("nav-open")
+        sidebarButton.setAttribute("aria-expanded", String(isOpen))
+        sidebarButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu")
+    })
 }

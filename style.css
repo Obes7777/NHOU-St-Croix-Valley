@@ -4,10 +4,38 @@ SETUP
 
 body{
     width:100%;
-    height: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+#side-bar-btn{
+    position: fixed;
+    top: 0;
+    left: calc(16.5vw + 0px);
+    display: none;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    z-index: 10;
+    color: white;
+    background: black;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#side-bar-btn svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
 }
 
 /*Custom Setups*/
@@ -25,8 +53,9 @@ body{
 
 #grid-container{
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 300px 300px;
+    grid-template-columns: 16.5vw minmax(0, 1fr);
+    grid-template-rows: auto;
+    min-height: 100vh;
 }
 
 h2{
@@ -36,7 +65,8 @@ h2{
 /*Content Area*/
 #content-pusher{
     padding:25px;
-    padding-top: 60px;
+    padding-top: 70px;
+    min-width: 0;
 
 }
 
@@ -79,7 +109,6 @@ SIDE BAR
 
 #nav-bar-logo{
     padding-top: 20px;
-    width: 15vw;
     width: 100%; /* Or set a specific width like 300px */
     aspect-ratio: 1 / 1; /* Forces the image container into a perfect square */
     object-fit: cover; /* Crops the image to fill the square without stretching */
@@ -91,6 +120,7 @@ SIDE BAR
     background-color: black;
     width: 16.5vw;
     height: 100%;
+    overflow-y: auto;
     box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.3);
 }   
 
@@ -104,8 +134,8 @@ WIDGETS
 
 /*Title*/
 #title-img{
-    width: 18vw;
-    max-width: none;
+    width: min(25vw, 360px);
+    max-width: 100%;
     height: auto;
     padding: 0;
     margin: 35px;
@@ -114,6 +144,8 @@ WIDGETS
 
 #title-para{
     text-align: center;
+    font-size: clamp(1.1rem, 2.2vw, 2rem);
+    line-height: 1.35;
 }
 
 @keyframes titleLoad {
@@ -127,15 +159,16 @@ WIDGETS
 #before-after-box{
     padding: 15px;
     border-radius: 15px;
-    width:100%;
+    width: 100%;
     height: auto;
-    max-height: 120vh;
+    max-height: none;
     margin-bottom: 30px;
     margin-top: 30px;
 }
 
 .before-after-img{
     width: 50%;
+    max-width: 100%;
     border-radius: 15px;
     border: solid black 2px;
 }
@@ -148,13 +181,13 @@ WIDGETS
 
 #before{
     position: relative;
-    left: 10%;
+    left: 0;
 }
 
 #after{
     position: relative;
-    left: 45%;
-    top: -15vh;
+    left: 0;
+    top: 0;
 }
 
 .grid-container-offset{
@@ -167,6 +200,7 @@ WIDGETS
     align-items: center; 
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 /*Applications*/
@@ -174,6 +208,7 @@ WIDGETS
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
+    align-items: start;
 
 }
 
@@ -181,6 +216,7 @@ WIDGETS
     border-radius: 12px;
     width: 100%;
     height: 100%;
+    object-fit: cover;
     box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.3);
     transition-duration: 500ms;
 
@@ -205,6 +241,9 @@ WIDGETS
     box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.3);
     background-attachment: fixed;
     transform: translateZ(10px) scale(1.1);
+    transform-origin: center top;
+    table-layout: fixed;
+    word-break: normal;
 
 }
 
@@ -213,6 +252,7 @@ WIDGETS
     padding: 16px 20px;
     text-align: left;
     border-bottom: 1px solid #49483e;
+    overflow-wrap: anywhere;
 }
 
 .comparison-table tbody tr:last-child td {
@@ -262,9 +302,52 @@ WIDGETS
 /*Menu*/
 #menu{
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.3);
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-/*Mouse Out*/
+#menu-container {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    overflow-x: auto;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.15);
+}
+
+#menu-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    background-color: #272822;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+#menu-table th {
+    padding: 10px 8px;
+    color: white;
+    background-color: #3e3d32;
+}
+
+#menu-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #49483e;
+    border-right: 1px solid #49483e;
+}
+
+#menu-table td:last-child {
+    border-right: none;
+    color: #ff4b4b;
+    font-weight: 600;
+}
+
+#menu-table tbody tr:hover {
+    background-color: #383830;
+}
+
+/*Responsive menu and content*/
 .grid-container {
   display: grid;
   /* Creates two equal columns (50% each) */
@@ -275,6 +358,7 @@ WIDGETS
   align-items: center; 
   max-width: 1200px;
   margin: 0 auto;
+    width: 100%;
 }
 
 .grid-image img {
@@ -291,13 +375,138 @@ WIDGETS
 
 /*Hybrid*/
 #warranty{
-    width: 50%;
+    width: min(50%, 360px);
+    max-width: 100%;
 }
 
  
 #hybrid{
     position: relative;
     top: -85px;
+    border-radius:25px;
+}
+
+@media (max-width: 768px) {
+    #grid-container {
+        display: block;
+    }
+
+    #nav-bar-container {
+        display: none;
+    }
+
+    #nav-bar {
+        width: min(82vw, 320px);
+        transform: translateX(-105%);
+        transition: transform 250ms ease;
+        z-index: 9;
+    }
+
+    body.nav-open #nav-bar {
+        transform: translateX(0);
+    }
+
+    #side-bar-btn {
+        display: grid;
+        top: 0;
+        left: 0;
+        background: black;
+    }
+
+    #content-pusher {
+        padding: 64px 16px 24px;
+    }
+
+    #title-img {
+        width: min(70vw, 280px);
+        margin: 16px;
+    }
+
+    .grid-container-offset,
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 24px;
+        align-items: start;
+    }
+
+    #before-after-box {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 0;
+    }
+
+    .before-after-label,
+    #before,
+    #after {
+        position: static;
+        text-align: center;
+    }
+
+    .before-after-img {
+        width: 100%;
+    }
+
+    #application-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .application-img-background {
+        aspect-ratio: 16 / 9;
+    }
+
+    .application-module {
+        padding: 0 8px;
+    }
+
+    .comparison-table {
+        width: 100%;
+        margin: 0;
+        transform: none;
+        font-size: 0.82rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 8px;
+    }
+
+    #menu-table {
+        min-width: 680px;
+        font-size: 0.75rem;
+    }
+
+    #menu-table th,
+    #menu-table td {
+        padding: 8px 6px;
+    }
+
+    #hybrid {
+        position: static;
+    }
+
+    #warranty {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    #before-after-box {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        min-width: 130px;
+    }
 }
 
 
