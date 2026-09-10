@@ -4,16 +4,16 @@
 
 //Pull this data from the file eventually
 const prices = {
-    "clear-nh-oil-price": 67,
-    "black-nh-oil-price": 67,
-    "black-v3-price": 67,
-    "wheelwell-price": 67,
-    "boss-wax-hybrid-price": [67, 67], // [car, truck]
-    "brine-wash-price": 67,
-    "full-chasis-price": 67,
-    "needle-scaling-price": 67,
-    "rustoration-price": 67,
-    "hd-oil-package-price": 67
+    "clear-nh-oil-price": 295,
+    "black-nh-oil-price": 315,
+    "black-v3-price": 399,
+    "wheelwell-price": 39,
+    "boss-wax-hybrid-price": [1425, 1525], // [car, truck]
+    "brine-wash-price": 159,
+    "full-chasis-price": 399,
+    "needle-scaling-price": 75,
+    "rustoration-price": 899,
+    "hd-oil-package-price": 599
 }
 
 
