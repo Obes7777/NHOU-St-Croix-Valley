@@ -4,9 +4,336 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Scrolling Test</title>
+        <style>
+            :root {
+                color-scheme: dark;
+                font-family: "Trebuchet MS", sans-serif;
+                background: #111;
+                color: #f7f4ef;
+                font-synthesis: none;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                margin: 0;
+                min-width: 320px;
+                overflow-x: hidden;
+                background: #111;
+            }
+
+            .video-stage {
+                position: sticky;
+                top: 0;
+                z-index: 0;
+                height: 100vh;
+                height: 100svh;
+                margin-bottom: -100vh;
+                overflow: hidden;
+                pointer-events: none;
+            }
+
+            .background-video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            main {
+                position: relative;
+                z-index: 1;
+            }
+
+            .module {
+                min-height: 72vh;
+                display: grid;
+                align-items: center;
+                padding: clamp(3rem, 8vw, 7rem) max(6vw, calc((100vw - 1100px) / 2));
+                background: rgba(13, 14, 14, 0.96);
+                border-block: 1px solid rgba(255, 255, 255, 0.12);
+            }
+
+            .module-inner {
+                width: min(100%, 1100px);
+                margin-inline: auto;
+            }
+
+            .intro {
+                min-height: 76vh;
+                text-align: center;
+            }
+
+            .intro .module-inner {
+                max-width: 760px;
+            }
+
+            .eyebrow {
+                margin: 0 0 1rem;
+                color: #ff4b34;
+                font-size: 0.78rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.12em;
+            }
+
+            h1, h2, p {
+                margin-top: 0;
+            }
+
+            h1 {
+                margin-bottom: 1.25rem;
+                font-size: clamp(2.5rem, 7vw, 5.5rem);
+                line-height: 0.98;
+            }
+
+            h2 {
+                margin-bottom: 1rem;
+                font-size: clamp(1.8rem, 4vw, 3.25rem);
+                line-height: 1.05;
+            }
+
+            p {
+                max-width: 62ch;
+                color: #d2d2ce;
+                font-size: clamp(1rem, 1.5vw, 1.2rem);
+                line-height: 1.7;
+            }
+
+            .intro p {
+                margin-inline: auto;
+            }
+
+            .content-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                align-items: center;
+                gap: clamp(1.5rem, 5vw, 4rem);
+            }
+
+            .photo-pair {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.75rem;
+            }
+
+            figure {
+                min-width: 0;
+                margin: 0;
+            }
+
+            figure img {
+                display: block;
+                width: 100%;
+                aspect-ratio: 4 / 5;
+                object-fit: cover;
+                border: 1px solid rgba(255, 255, 255, 0.25);
+            }
+
+            figcaption {
+                padding-top: 0.65rem;
+                color: #d2d2ce;
+                font-size: 0.85rem;
+            }
+
+            .feature-photo {
+                display: block;
+                width: 100%;
+                max-height: 440px;
+                aspect-ratio: 4 / 3;
+                object-fit: cover;
+                border: 1px solid rgba(255, 255, 255, 0.25);
+            }
+
+            .video-break {
+                min-height: 46vh;
+                display: grid;
+                place-items: center;
+                padding: 2.5rem 1.5rem;
+                background: rgba(232, 28, 8, 0.72);
+                border-block: 1px solid rgba(255, 255, 255, 0.35);
+                text-align: center;
+            }
+
+            .video-break p {
+                margin: 0;
+                color: #fff;
+                font-size: clamp(1.5rem, 4vw, 3rem);
+                font-weight: 700;
+            }
+
+            .review-list {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1.5rem;
+            }
+
+            blockquote {
+                margin: 0;
+                padding: 1.5rem 0;
+                border-top: 2px solid #ed321d;
+            }
+
+            blockquote p {
+                color: #f7f4ef;
+            }
+
+            cite {
+                color: #b7b8b5;
+                font-size: 0.9rem;
+                font-style: normal;
+            }
+
+            .closing {
+                min-height: 48vh;
+                text-align: center;
+            }
+
+            .closing .module-inner {
+                display: grid;
+                justify-items: center;
+            }
+
+            .contact-link {
+                display: inline-block;
+                padding: 0.9rem 1.2rem;
+                color: #fff;
+                background: #e32916;
+                font-weight: 700;
+                text-decoration: none;
+            }
+
+            .contact-link:hover,
+            .contact-link:focus-visible {
+                background: #bd1e10;
+            }
+
+            @media (max-width: 700px) {
+                .module {
+                    min-height: 78vh;
+                    padding: 4rem 1.25rem;
+                }
+
+                .intro {
+                    min-height: 70vh;
+                }
+
+                .content-grid,
+                .review-list {
+                    grid-template-columns: 1fr;
+                }
+
+                .content-grid .feature-photo {
+                    grid-row: 1;
+                }
+
+                .photo-pair {
+                    gap: 0.5rem;
+                }
+
+                .video-break {
+                    min-height: 38vh;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                html {
+                    scroll-behavior: auto;
+                }
+            }
+        </style>
     </head>
 
     <body>
-        
+        <div class="video-stage" aria-hidden="true">
+            <video class="background-video" autoplay muted loop playsinline tabindex="-1" poster="src/img/trucks.jpg">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <main>
+            <section class="module intro">
+                <div class="module-inner">
+                    <p class="eyebrow">NHOU St. Croix Valley</p>
+                    <h1>Around here,<br>we take care of our own.</h1>
+                    <p>Road salt is part of life up north. Give your vehicle another line of defense with professional rust prevention made for the way we drive.</p>
+                </div>
+            </section>
+
+            <section class="video-break" aria-label="Video break">
+                <p>Protection that goes the distance.</p>
+            </section>
+
+            <section class="module">
+                <div class="module-inner content-grid">
+                    <div>
+                        <p class="eyebrow">See the difference</p>
+                        <h2>Before and after</h2>
+                        <p>A careful application helps protect exposed metal and hard-to-reach areas from moisture, salt, and seasonal road grime.</p>
+                    </div>
+                    <div class="photo-pair">
+                        <figure>
+                            <img src="src/img/before.jpeg" alt="Vehicle undercarriage before rust-prevention treatment">
+                            <figcaption>Before treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="src/img/after.jpeg" alt="Vehicle undercarriage after rust-prevention treatment">
+                            <figcaption>After treatment</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="video-break" aria-label="Video break">
+                <p>Built for the roads we call home.</p>
+            </section>
+
+            <section class="module">
+                <div class="module-inner content-grid">
+                    <div>
+                        <p class="eyebrow">Rust prevention, explained</p>
+                        <h2>Why protect your undercarriage?</h2>
+                        <p>Water and road salt collect beneath your vehicle, where corrosion can quietly take hold. An oil-based protectant creeps into seams and cavities, displaces moisture, and helps shield vulnerable metal through every season.</p>
+                        <p>Annual inspections make it easier to spot wear early and keep your protection working as intended.</p>
+                    </div>
+                    <img class="feature-photo" src="src/img/trucks.jpg" alt="Truck ready for winter road conditions">
+                </div>
+            </section>
+
+            <section class="video-break" aria-label="Video break">
+                <p>A little prevention goes a long way.</p>
+            </section>
+
+            <section class="module">
+                <div class="module-inner">
+                    <p class="eyebrow">From local drivers</p>
+                    <h2>Reviews</h2>
+                    <div class="review-list">
+                        <blockquote>
+                            <p>“Friendly service, clear answers, and the whole process was easy from start to finish.”</p>
+                            <cite>Local customer</cite>
+                        </blockquote>
+                        <blockquote>
+                            <p>“They took the time to explain what my vehicle needed and got me back on the road quickly.”</p>
+                            <cite>Local customer</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+
+            <section class="module closing">
+                <div class="module-inner">
+                    <p class="eyebrow">Ready when you are</p>
+                    <h2>Keep your vehicle ready for the next season.</h2>
+                    <a class="contact-link" href="tel:+17154941795">Call 715-494-1795</a>
+                </div>
+            </section>
+        </main>
     </body>
 </html>
