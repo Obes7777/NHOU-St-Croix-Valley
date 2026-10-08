@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0;">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NHOU St. Croix Valley</title>
+
+        <!--Favicon-->
+        <link rel="icon" href="src/img/NHOU_LOGO_STCROIX.webp" type="image/svg+xml">
+
+        <!--CSS-->
+        <link rel="stylesheet" href="style.css">
+        
+        <!--Script Tags-->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="script.js" defer></script>
+
+        <script>
+            let input = prompt("Please enter a Developer code (Leave empty or close this dialouge box if you are a user)")
+
+            switch(input){
+                case "scrolling_examples":
+                    window.location.href = "./scrolling tests/index.html";
+                    break
+            }
+        </script>
+    </head>
+
+    <body style="margin: 0; padding: 0;">
+        <button id="side-bar-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-bar">
+            <svg viewBox="0 0 100 80" aria-hidden="true" focusable="false">
+                <rect width="100" height="12" rx="6"></rect>
+                <rect y="34" width="100" height="12" rx="6"></rect>
+                <rect y="68" width="100" height="12" rx="6"></rect>
+            </svg>
+        </button>
+
+        <div id="nav-bar" class="nav-bar">
+            <img src="src/img/NHOU_LOGO_STCROIX.webp" id="nav-bar-logo">
+            <div class="nav-link">Contact Us:</div>
+            <div class="nav-link"><a class="contact-link" href="https://www.facebook.com/NHOUStCroixValley" target="_blank">Facebook</a></div>
+            <div class="nav-link"><a class="contact-link" href="tel:+17154941795">+1 715-494-1795</a></div>
+            <div class="nav-link"><a class="contact-link" href="mailto:info@nhoustcroixvalley.com">info@nhoustcroixvalley.com</a></div>
+
+            <!--<div class="nav-link"><a href="">Contact</a></div>
+            <div class="nav-link"><a href="">About</a></div>
+            <div class="nav-link"><a href="">Quote</a></div>-->
+            <!--Probably put something here, not sure what other links but like there is stuff for it-->
+
+            <!--Contact links-->
+            <!--
+            <div id="contact-links">
+                <div id="phone-email">
+                    <div id="phone" class="contact-link-wrapper"><a class="contact-link" href="tel:+17154941795"></a></div>
+                    <div id="email"class="contact-link-wrapper"><a class="contact-link" href="mailto:info@nhoustcroixvalley.com"></a></div>
+                </div>
+                <div id="facebook">
+                    <div class="contact-link-wrapper"><a class="contact-link" href="https://www.facebook.com/NHOUStCroixValley"></a></div>
+                </div>
+            </div>
+            -->
+        </div>
+        <div id="grid-container">
+            <div id="nav-bar-container">
+                <div id="ghost-nav-bar" class="nav-bar"></div>  
+            </div>
+
+            <div id="content">
+                <div id="content-pusher">
+                    <div id="title-container">
+                        <div class="flex-container">
+                            <div>
+                                <img src="src/img/NHOU_LOGO_STCROIX.webp" id="title-img">    
+                            </div>
+
+                        </div>
+                        <b><h1 id="title-para">NHOU St. Croix Valley serves the Wisconsin/Minnesota border from our shop or convenient mobile undercoating trailer.</h1></b>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <div id="before-after-container">
+                        <div class="grid-container-offset">
+                            <div id="before-after-box">
+                                <div id="before">
+                                    <div class="before-after-label">
+                                        <h3><b>Before</b></h3>
+                                    </div>
+                                    <div class="before-after-img-container">
+                                        <img src="src/img/before.jpeg" class="before-after-img">
+                                    </div>
+                                </div>
+                                <div id="after">
+                                    <div class="before-after-label">
+                                        <h3><b>After</b></h3>
+                                    </div>
+                                    <div class="before-after-img-container">
+                                        <img src="src/img/after.jpeg" class="before-after-img">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <b>
+                                <p>
+                                    Unlike paint-based coatings, our oil-based formula self-heals, forces out moisture, and creeps deep into frame cavities. Our hybrid formula cures to a matte-black, drip-free finish within 48 hours and includes a lifetime warranty.
+                                </p>
+                                </b>
+                            </div>
+                        </div>
+                    </div>
+                <br>
+                <br>
+                <br>
+
+                    <div id="application-container">
+                        <div class="application-img-background">
+                            <img class="application-img" src="src/img/trucks.jpg">
+                        </div>
+                        <div class="application-img-background">
+                            <img class="application-img" src="src/img/cars.webp">
+                        </div>
+                        <div class="application-img-background">
+                            <img class="application-img" src="src/img/fleet.webp">
+                        </div>
+                        <div class="application-module">
+                            <h2>TRUCKS</h2>
+                            <p>
+                                Protect your truck or snow-removal equipment from rust, reduce downtime, and extend vehicle life with NHOU oil undercoating.
+                            </p>
+                        </div>
+                        <div class="application-module">
+                            <h2>CARS & SUVS</h2>
+                            <p>
+                                Our eco-friendly, mineral-oil-based formula reaches frames and wheel wells, forcing out moisture and sealing off the oxygen rust needs.
+                            </p>
+                        </div>
+                        <div class="application-module">
+                            <h2>MUNICIPAL & COMMERCIAL FLEETS</h2>
+                            <p>
+                                Protect fleet vehicles and equipment from corrosion in use or storage. Our product contains peppermint, which rodents do not like.
+                            </p>
+                        </div>                                                 
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+
+
+
+                    <div id="comparison-container">
+
+                        <h2><b>NHOU Oil Undercoating vs Other Undercoating</b></h2>
+                    
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>NHOU Oil Undercoating</th>
+                                    <th>Other Undercoatings</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Formulation:</td>
+                                    <td>Modern, vehicle-specific formula, constantly improved</td>
+                                    <td>Outdated recipes not intended for vehichles that trap moisture and cause rust</td>
+                                </tr>
+                                <tr>
+                                    <td>Penetration:</td>
+                                    <td>Mists and creeps deep into tight spaces, traveling more than 7 inches from a dime-size drop</td>
+                                    <td>Does not creep or mist missing deep body cavities and frames</td>
+                                </tr>
+                                <tr>
+                                    <td>Equipment:</td>
+                                    <td>Custom tools reach every part of the undercarriage</td>
+                                    <td>Generic, off-the-shelf tools that miss hidden areas</td>
+                                </tr>
+                                <tr>
+                                    <td>Peppermint:</td>
+                                    <td>Contains peppermint, which rodents do not like</td>
+                                    <td>Not included</td>
+                                </tr>                                                                                                                                       
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <div id="menu-container">
+                        <table id="menu-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="5">
+                                        NHOU ST. CROIX VALLEY<br>
+                                        2026 RUST PREVENTION MENU - Cars, Trucks, & SUVs
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Description</th>
+                                    <th>Rust Level</th>
+                                    <th>Frequency</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Clear NH Oil</td>
+                                    <td>Clear NH Oil applied to undercarriage externals and fogged into all cavities.</td>
+                                    <td>Any</td>
+                                    <td>Yearly Application</td>
+                                    <td id="clear-nh-oil-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Black NH Oil</td>
+                                    <td>Black NH Oil applied to black factory undercarriage externals, with Clear NH Oil fogged into all cavities.</td>
+                                    <td>Any</td>
+                                    <td>Yearly Application</td>
+                                    <td id="black-nh-oil-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Black V3</td>
+                                    <td>NH Oil, wax, and lanolin formula with lower drip and higher durability, plus Clear NH Oil in all cavities.</td>
+                                    <td>Low to Moderate</td>
+                                    <td>Yearly Application</td>
+                                    <td id="black-v3-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>HD Wheelwell Guard</td>
+                                    <td>Extra-thick protection for wheel wells without plastic or carpet inner fenders.</td>
+                                    <td>Any</td>
+                                    <td>Varies by mileage</td>
+                                    <td id="wheelwell-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Boss Wax Hybrid</td>
+                                    <td>Premium semi-permanent NH Oil and wax coating with warranty coverage, brine wash as needed, and Clear NH Oil in cavities.</td>
+                                    <td>Light to no rust only</td>
+                                    <td>Re-oil cavities every 2 years</td>
+                                    <td id="boss-wax-hybrid-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Brine Eliminator Wash</td>
+                                    <td>Foaming soak, pressure wash, and rinse to remove dirt and dissolve salt and brine contaminants.</td>
+                                    <td>Any</td>
+                                    <td>Before first undercoating</td>
+                                    <td id="brine-wash-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Full Chassis Flush</td>
+                                    <td>Brine wash plus cavities and internals, including up to 2 hours of labor.</td>
+                                    <td>Any</td>
+                                    <td>As needed</td>
+                                    <td id="full-chasis-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>Needle Scaling</td>
+                                    <td>Prepares vehicles with loose rust or peeling prior coatings for undercoating.</td>
+                                    <td>Moderate to Severe</td>
+                                    <td>Before first undercoating</td>
+                                    <td id="needle-scaling-price"></td>
+                                </tr>
+                                <tr>
+                                    <th colspan="5">Package Deals</th>
+                                </tr>
+                                <tr>
+                                    <td>Rustoration</td>
+                                    <td>Brine wash, rust neutralizer, up to 2 hours of needle scaling, HD Wheelwell Guard, and Black NH Oil.</td>
+                                    <td>Significant but structurally solid</td>
+                                    <td>NH Oil yearly</td>
+                                    <td id="rustoration-price"></td>
+                                </tr>
+                                <tr>
+                                    <td>HD Oil Package</td>
+                                    <td>Black V3 and HD Wheelwell Guard on high-wear areas such as frame rails, axles, suspension components, and wheel wells.</td>
+                                    <td>Any</td>
+                                    <td>Every 2 years</td>
+                                    <td id="hd-oil-package-price"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <br>
+
+                    
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>v
+                <br>
+                <div id="hybrid-container">
+                        <div class="grid-container">
+                            <div class="grid-image">
+                                <img id="hybrid" src="src/img/NHOUHYBRID.webp" alt="Your descriptive alt text">
+                            </div>
+                            <div class="grid-content">
+                                <b><h1>NHOU Hybrid</h1></b>
+                                <p>
+                                    NHOU HYBRID is our highest-rated formula for vehicles with little to no rust. It penetrates to the base metal, displaces moisture, and cures within 48 hours into a pliable, matte-black layer that protects against road salt and rust.
+                                    <br>
+                                    <br>
+                                    We then mist NHOU Clear Oil Undercoating into frame cavities, body panels, and the engine bay. The product contains peppermint, which rodents do not like.
+                                    <br>
+                                    <br>
+                                    NHOU HYBRID includes a lifetime, transferable warranty.
+                                </p>
+                                <br>
+                                <div id="warranty-container">
+                                    <img id="warranty" src="src/img/warranty.webp" > 
+                                </div>
+
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<!--
+https://nhou.com/stcroixvalley/wp-content/uploads/sites/7/2024/10/Screenshot2024-09-09at2.02.54%E2%80%AFPM.png
+-->
